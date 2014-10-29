@@ -8,6 +8,8 @@
 
 import Cocoa
 
-class MainWindowController: NSWindowController {
-
+class MainWindowController: NSWindowController, NSSplitViewDelegate {
+	func splitView(splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
+		return subview == splitView.subviews[0] as NSObject
+	}
 }

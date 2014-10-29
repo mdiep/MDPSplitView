@@ -45,6 +45,9 @@
                             <real value="251"/>
                             <real value="250"/>
                         </holdingPriorities>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="w5t-3B-5vh"/>
+                        </connections>
                     </splitView>
                 </subviews>
                 <constraints>
