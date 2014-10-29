@@ -13,6 +13,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 	
 	let sourceList = SourceListController(nibName: "SourceList", bundle: nil)!
 	var lastWidth: CGFloat = 100
+	var duration: NSTimeInterval = 0.5
 
 	override func awakeFromNib() {
 		let leftView = self.splitView.subviews[0] as NSView
@@ -39,7 +40,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 		NSAnimationContext.runAnimationGroup({ context in
 			context.allowsImplicitAnimation = true
 			context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-			context.duration = 1
+			context.duration = self.duration
 			
 			self.splitView.setPosition(position, ofDividerAtIndex: 0)
 		}, completionHandler: { () -> Void in
