@@ -12,6 +12,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 	@IBOutlet weak var splitView: NSSplitView!
 	
 	let sourceList = SourceListController(nibName: "SourceList", bundle: nil)!
+	var lastWidth: CGFloat = 100
 
 	override func awakeFromNib() {
 		let leftView = self.splitView.subviews[0] as NSView
@@ -25,5 +26,23 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 	
 	func splitView(splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
 		return subview == splitView.subviews[0] as NSObject
+	}
+	
+	@IBAction func toggleSourceList(sender: AnyObject?) {
+		let isOpen = !splitView.isSubviewCollapsed(sourceList.view.superview!)
+		let position = (isOpen ? 0 : lastWidth)
+		
+		if isOpen {
+			lastWidth = sourceList.view.frame.size.width
+		}
+		
+		NSAnimationContext.runAnimationGroup({ context in
+			context.allowsImplicitAnimation = true
+			context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+			context.duration = 1
+			
+			self.splitView.setPosition(position, ofDividerAtIndex: 0)
+		}, completionHandler: { () -> Void in
+		})
 	}
 }
