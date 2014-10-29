@@ -11,6 +11,8 @@
 		BECF65441A013F1A00FB0844 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BECF65431A013F1A00FB0844 /* Images.xcassets */; };
 		BECF65471A013F1A00FB0844 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECF65451A013F1A00FB0844 /* MainMenu.xib */; };
 		BECF65531A013F1A00FB0844 /* CleanRoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF65521A013F1A00FB0844 /* CleanRoomTests.swift */; };
+		BECF65651A016CCA00FB0844 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECF65631A016CCA00FB0844 /* MainWindow.xib */; };
+		BECF65671A016CD700FB0844 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF65661A016CD700FB0844 /* MainWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		BECF654C1A013F1A00FB0844 /* CleanRoomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanRoomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECF65511A013F1A00FB0844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BECF65521A013F1A00FB0844 /* CleanRoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanRoomTests.swift; sourceTree = "<group>"; };
+		BECF65641A016CCA00FB0844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		BECF65661A016CD700FB0844 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				BECF65411A013F1A00FB0844 /* AppDelegate.swift */,
 				BECF65431A013F1A00FB0844 /* Images.xcassets */,
 				BECF65451A013F1A00FB0844 /* MainMenu.xib */,
+				BECF65631A016CCA00FB0844 /* MainWindow.xib */,
+				BECF65661A016CD700FB0844 /* MainWindowController.swift */,
 				BECF653F1A013F1A00FB0844 /* Supporting Files */,
 			);
 			path = CleanRoom;
@@ -188,6 +194,7 @@
 			files = (
 				BECF65441A013F1A00FB0844 /* Images.xcassets in Resources */,
 				BECF65471A013F1A00FB0844 /* MainMenu.xib in Resources */,
+				BECF65651A016CCA00FB0844 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECF65671A016CD700FB0844 /* MainWindowController.swift in Sources */,
 				BECF65421A013F1A00FB0844 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +242,14 @@
 				BECF65461A013F1A00FB0844 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		BECF65631A016CCA00FB0844 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BECF65641A016CCA00FB0844 /* Base */,
+			);
+			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -393,6 +409,7 @@
 				BECF65581A013F1A00FB0844 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BECF65591A013F1A00FB0844 /* Build configuration list for PBXNativeTarget "CleanRoomTests" */ = {
 			isa = XCConfigurationList;
@@ -401,6 +418,7 @@
 				BECF655B1A013F1A00FB0844 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
