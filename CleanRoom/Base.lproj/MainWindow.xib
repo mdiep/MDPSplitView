@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="CleanRoom" customModuleProvider="target">
             <connections>
+                <outlet property="splitView" destination="u8E-lg-tDJ" id="RnZ-vb-jIE"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="eqs-7u-oFh"/>
             </connections>
         </customObject>
