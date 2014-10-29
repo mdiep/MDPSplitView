@@ -19,6 +19,40 @@
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8E-lg-tDJ">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <subviews>
+                            <customView id="1jB-0Q-YfT">
+                                <rect key="frame" x="0.0" y="0.0" width="161" height="270"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="HQK-CG-afQ"/>
+                                </constraints>
+                            </customView>
+                            <customView id="eTW-wC-kct">
+                                <rect key="frame" x="162" y="0.0" width="318" height="270"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Qu2-XW-Otc"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="270" id="I71-VS-kS5"/>
+                        </constraints>
+                        <holdingPriorities>
+                            <real value="251"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="u8E-lg-tDJ" secondAttribute="bottom" id="3Ty-lM-IvP"/>
+                    <constraint firstItem="u8E-lg-tDJ" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="CQ8-2t-sVx"/>
+                    <constraint firstItem="u8E-lg-tDJ" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="OE0-Yw-qOr"/>
+                    <constraint firstAttribute="trailing" secondItem="u8E-lg-tDJ" secondAttribute="trailing" id="ecR-TG-vzA"/>
+                </constraints>
             </view>
         </window>
     </objects>
