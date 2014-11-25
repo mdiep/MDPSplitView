@@ -34,6 +34,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 		let position = (isOpen ? 0 : lastWidth)
 		
 		(self.window?.contentView as NSView).wantsLayer = true
+		(self.window?.contentView as NSView).displayIfNeeded() // avoids funky implicit animations on the position of the label, &c.
 
 		if isOpen {
 			lastWidth = sourceList.view.frame.size.width
