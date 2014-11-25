@@ -33,6 +33,8 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 		let isOpen = !splitView.isSubviewCollapsed(sourceList.view.superview!)
 		let position = (isOpen ? 0 : lastWidth)
 		
+		(self.window?.contentView as NSView).wantsLayer = true
+
 		if isOpen {
 			lastWidth = sourceList.view.frame.size.width
 		}
@@ -44,6 +46,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 			
 			self.splitView.setPosition(position, ofDividerAtIndex: 0)
 		}, completionHandler: { () -> Void in
+			(self.window?.contentView as NSView).wantsLayer = false
 		})
 	}
 }
