@@ -31,8 +31,6 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 		let position = (isOpen ? 0 : lastWidth)
 		
 		splitView.wantsLayer = true
-		sourceList.view.autoresizingMask = .ViewHeightSizable | .ViewMaxXMargin
-
 		splitView.displayIfNeeded()
 
 		if isOpen {
