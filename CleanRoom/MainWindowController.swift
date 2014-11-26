@@ -30,7 +30,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 		let isOpen = !splitView.isSubviewCollapsed(splitView.subviews[0] as NSView)
 		let position = (isOpen ? 0 : lastWidth)
 		
-		(self.window?.contentView as NSView).wantsLayer = true
+		splitView.wantsLayer = true
 		(self.window?.contentView as NSView).displayIfNeeded() // avoids funky implicit animations on the position of the label, &c.
 
 		if isOpen {
@@ -44,7 +44,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 			
 			self.splitView.setPosition(position, ofDividerAtIndex: 0)
 		}, completionHandler: { () -> Void in
-			(self.window?.contentView as NSView).wantsLayer = false
+			self.splitView.wantsLayer = false
 		})
 	}
 }
