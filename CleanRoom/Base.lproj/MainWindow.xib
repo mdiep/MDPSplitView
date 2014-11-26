@@ -16,27 +16,24 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1440"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8E-lg-tDJ">
+                    <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8E-lg-tDJ" customClass="AnimatableSplitView" customModule="CleanRoom" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <subviews>
-                            <customView id="1jB-0Q-YfT">
-                                <rect key="frame" x="0.0" y="0.0" width="161" height="270"/>
+                            <customView fixedFrame="YES" id="1jB-0Q-YfT">
+                                <rect key="frame" x="0.0" y="0.0" width="151" height="270"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="HQK-CG-afQ"/>
-                                </constraints>
                             </customView>
                             <customView id="eTW-wC-kct">
-                                <rect key="frame" x="162" y="0.0" width="318" height="270"/>
+                                <rect key="frame" x="152" y="0.0" width="328" height="270"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="6ZR-uc-6Ov">
-                                        <rect key="frame" x="71" y="104" width="176" height="62"/>
+                                        <rect key="frame" x="76" y="104" width="176" height="62"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jEX-hN-o6t">
                                                 <rect key="frame" x="18" y="22" width="61" height="17"/>
@@ -86,8 +83,20 @@
                                             <constraint firstItem="jEX-hN-o6t" firstAttribute="baseline" secondItem="391-Gj-Ax2" secondAttribute="baseline" id="jmX-Dq-YdX"/>
                                         </constraints>
                                     </customView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M0g-gW-8VW">
+                                        <rect key="frame" x="233" y="13" width="81" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Toggle" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FZq-tK-hPH">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="toggleSourceList:" target="-2" id="0wG-Lp-8Ex"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="M0g-gW-8VW" secondAttribute="trailing" constant="20" symbolic="YES" id="KbT-4t-j7G"/>
+                                    <constraint firstAttribute="bottom" secondItem="M0g-gW-8VW" secondAttribute="bottom" constant="20" symbolic="YES" id="PEM-wG-YTa"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Qu2-XW-Otc"/>
                                     <constraint firstAttribute="centerY" secondItem="6ZR-uc-6Ov" secondAttribute="centerY" id="ZY1-86-Huu"/>
                                     <constraint firstAttribute="centerX" secondItem="6ZR-uc-6Ov" secondAttribute="centerX" id="Zrd-Ox-M2H"/>
