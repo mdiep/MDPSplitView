@@ -31,6 +31,8 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 		let position = (isOpen ? 0 : lastWidth)
 		
 		splitView.wantsLayer = true
+		sourceList.view.translatesAutoresizingMaskIntoConstraints = true
+		sourceList.view.autoresizingMask = .ViewHeightSizable | .ViewMaxXMargin
 
 		splitView.displayIfNeeded()
 
@@ -46,6 +48,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 			self.splitView.setPosition(position, ofDividerAtIndex: 0)
 		}, completionHandler: { () -> Void in
 			self.splitView.wantsLayer = false
+			self.sourceList.view.translatesAutoresizingMaskIntoConstraints = false
 		})
 	}
 }
