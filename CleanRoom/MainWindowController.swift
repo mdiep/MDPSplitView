@@ -39,7 +39,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 		
 		NSAnimationContext.runAnimationGroup({ context in
 			context.allowsImplicitAnimation = true
-			context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+			context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 			context.duration = self.duration
 			
 			self.splitView.setPosition(position, ofDividerAtIndex: 0)
