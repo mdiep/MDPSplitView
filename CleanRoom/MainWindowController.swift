@@ -17,9 +17,12 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 
 	override func awakeFromNib() {
 		let leftView = self.splitView.subviews[0] as NSView
-		sourceList.view.frame = leftView.frame
-		leftView.removeFromSuperview()
-		splitView.addSubview(sourceList.view, positioned: .Below, relativeTo: (splitView.subviews[0] as NSView))
+		let views = [
+			"sourceList": sourceList.view,
+		]
+		leftView.addSubview(sourceList.view)
+		leftView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[sourceList]|", options: nil, metrics: nil, views: views))
+		leftView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[sourceList]|", options: nil, metrics: nil, views: views))
 	}
 	
 	func splitView(splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
@@ -27,7 +30,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 	}
 	
 	@IBAction func toggleSourceList(sender: AnyObject?) {
-		let isOpen = !splitView.isSubviewCollapsed(splitView.subviews[0] as NSView)
+		let isOpen = !splitView.isSubviewCollapsed(sourceList.view.superview!)
 		let position = (isOpen ? 0 : lastWidth)
 		
 		splitView.wantsLayer = true
