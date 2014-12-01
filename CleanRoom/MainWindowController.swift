@@ -46,9 +46,6 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 
 			self.splitView.animator().splitPosition = position
 		}, completionHandler: {
-			if isOpen {
-				sourceView.hidden = true
-			}
 		})
 	}
 }
@@ -67,6 +64,11 @@ class AnimatableSplitView: NSSplitView {
 	dynamic var splitPosition: CGFloat = 150 {
 		didSet {
 			setPosition(splitPosition, ofDividerAtIndex: 0)
+			
+			// If a split view item is "collapsed", then it's hidden. I'm not sure why NSSplitView isn't doing this.
+			if splitPosition == 0 {
+				(subviews[0] as NSView).hidden = true
+			}
 		}
 	}
 }
