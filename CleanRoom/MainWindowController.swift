@@ -39,7 +39,6 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 		if isOpen {
 			lastWidth = sourceList.view.frame.size.width
 		}
-		println("animating to \(position)")
 
 		NSAnimationContext.runAnimationGroup({ context in
 			context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
