@@ -86,13 +86,15 @@ class AnimatableSplitView: NSSplitView {
 		return super.defaultAnimationForKey(key)
 	}
 	
-	// fixme: using a computed property allowed us to collapse but not expand, but using a stored property means we can fall out of sync with user drags
-	dynamic var splitPosition: CGFloat = 150 {
-		didSet {
-			setPosition(splitPosition, ofDividerAtIndex: 0)
+	dynamic var splitPosition: CGFloat {
+		get {
+			return (subviews[0] as NSView).frame.size.width
+		}
+		set(newPosition) {
+			setPosition(newPosition, ofDividerAtIndex: 0)
 			
 			// If a split view item is "collapsed", then it's hidden. I'm not sure why NSSplitView isn't doing this.
-			if splitPosition == 0 {
+			if newPosition == 0 {
 				(subviews[0] as NSView).hidden = true
 			}
 		}
