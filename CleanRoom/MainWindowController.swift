@@ -45,7 +45,10 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 			context.duration = self.duration
 
 			self.splitView.animator().splitPosition = position
-		}, completionHandler: { () -> Void in
+		}, completionHandler: {
+			if isOpen {
+				sourceView.hidden = true
+			}
 		})
 	}
 }
@@ -59,18 +62,11 @@ class AnimatableSplitView: NSSplitView {
 		}
 		return super.defaultAnimationForKey(key)
 	}
-
-	override func isSubviewCollapsed(subview: NSView) -> Bool {
-		// fixme: this doesn’t track whether the splitPosition is currently animating to 0, and it should
-		return splitPosition <= 1
-	}
-
+	
 	// fixme: using a computed property allowed us to collapse but not expand, but using a stored property means we can fall out of sync with user drags
 	dynamic var splitPosition: CGFloat = 150 {
 		didSet {
 			setPosition(splitPosition, ofDividerAtIndex: 0)
 		}
 	}
-
-	// fixme: dragging to a suitably small size should collapse
 }
