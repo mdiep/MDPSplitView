@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEB6BE771A2E0C5F001D9407 /* AnimatableSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB6BE761A2E0C5F001D9407 /* AnimatableSplitView.m */; };
 		BECF65421A013F1A00FB0844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF65411A013F1A00FB0844 /* AppDelegate.swift */; };
 		BECF65441A013F1A00FB0844 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BECF65431A013F1A00FB0844 /* Images.xcassets */; };
 		BECF65471A013F1A00FB0844 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECF65451A013F1A00FB0844 /* MainMenu.xib */; };
@@ -28,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BEB6BE741A2E0C5F001D9407 /* CleanRoom-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CleanRoom-Bridging-Header.h"; sourceTree = "<group>"; };
+		BEB6BE751A2E0C5F001D9407 /* AnimatableSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatableSplitView.h; sourceTree = "<group>"; };
+		BEB6BE761A2E0C5F001D9407 /* AnimatableSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatableSplitView.m; sourceTree = "<group>"; };
 		BECF653C1A013F1A00FB0844 /* CleanRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECF65401A013F1A00FB0844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BECF65411A013F1A00FB0844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 			children = (
 				BECF65411A013F1A00FB0844 /* AppDelegate.swift */,
 				BECF65431A013F1A00FB0844 /* Images.xcassets */,
+				BEB6BE751A2E0C5F001D9407 /* AnimatableSplitView.h */,
+				BEB6BE761A2E0C5F001D9407 /* AnimatableSplitView.m */,
 				BECF65451A013F1A00FB0844 /* MainMenu.xib */,
 				BECF65631A016CCA00FB0844 /* MainWindow.xib */,
 				BECF65661A016CD700FB0844 /* MainWindowController.swift */,
@@ -96,6 +102,7 @@
 		BECF653F1A013F1A00FB0844 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BEB6BE741A2E0C5F001D9407 /* CleanRoom-Bridging-Header.h */,
 				BECF65401A013F1A00FB0844 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -220,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BECF65671A016CD700FB0844 /* MainWindowController.swift in Sources */,
+				BEB6BE771A2E0C5F001D9407 /* AnimatableSplitView.m in Sources */,
 				BECF65691A016FDE00FB0844 /* SourceListController.swift in Sources */,
 				BECF65421A013F1A00FB0844 /* AppDelegate.swift in Sources */,
 			);
@@ -352,10 +360,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CleanRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CleanRoom/CleanRoom-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -363,10 +374,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CleanRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CleanRoom/CleanRoom-Bridging-Header.h";
 			};
 			name = Release;
 		};
