@@ -48,6 +48,10 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 	}
 
 	@IBAction func toggleSourceList(sender: AnyObject?) {
+		if animatingSidaber {
+			return
+		}
+		
 		let sourceView = splitView.subviews[0] as NSView
 		let detailView = splitView.subviews[1] as NSView
 		let isOpen = !splitView.isSubviewCollapsed(sourceView)
