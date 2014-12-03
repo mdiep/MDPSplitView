@@ -71,37 +71,12 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 			context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 			context.duration = self.duration
 
-			self.splitView.animator().splitPosition = position
+			self.splitView.setPosition(position, ofDividerAtIndex: 0, animated: true)
 		}, completionHandler: {
 			self.animatingSidaber = false
 			if !isOpen {
 				sourceView.addConstraint(self.widthConstraint!)
 			}
 		})
-	}
-}
-
-
-/// Not `final` because if it is, the animation methods are not called.
-class AnimatableSplitView: NSSplitView {
-	override class func defaultAnimationForKey(key: String) -> AnyObject? {
-		if key == "splitPosition" {
-			return CABasicAnimation()
-		}
-		return super.defaultAnimationForKey(key)
-	}
-	
-	dynamic var splitPosition: CGFloat {
-		get {
-			return (subviews[0] as NSView).frame.size.width
-		}
-		set(newPosition) {
-			setPosition(newPosition, ofDividerAtIndex: 0)
-			
-			// If a split view item is "collapsed", then it's hidden. I'm not sure why NSSplitView isn't doing this.
-			if newPosition == 0 {
-				(subviews[0] as NSView).hidden = true
-			}
-		}
 	}
 }
