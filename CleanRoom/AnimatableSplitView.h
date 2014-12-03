@@ -11,6 +11,6 @@
 
 @interface AnimatableSplitView : NSSplitView
 
-@property (assign, nonatomic) CGFloat splitPosition;
+- (void)setPosition:(CGFloat)position ofDividerAtIndex:(NSInteger)dividerIndex animated:(BOOL)animated;
 
 @end

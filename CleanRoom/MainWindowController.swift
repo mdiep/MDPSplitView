@@ -67,7 +67,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 			context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 			context.duration = self.duration
 
-			self.splitView.animator().splitPosition = position
+			self.splitView.setPosition(position, ofDividerAtIndex: 0, animated: true)
 		}, completionHandler: {
 			self.animatingSidaber = false
 			if !isOpen {
