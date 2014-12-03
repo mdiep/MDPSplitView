@@ -27,7 +27,7 @@
 
 /*!
  An `NSSplitView` subclass that provides a method to animate the position of a
- divider.
+ divider in a way that works with Auto Layout.
  */
 @interface MDPSplitView : NSSplitView
 
