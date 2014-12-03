@@ -19,15 +19,15 @@
  Set the position of a divider, possibly with an animation.
  
  @discussion
-	This method will use the split view's animator proxy to animate by calling
-	`-setPosition:ofDividerAtIndex:`.
+    This method will use the split view's animator proxy to animate by calling
+    `-setPosition:ofDividerAtIndex:`.
  
  @param position
-	The new position of the divider.
+    The new position of the divider.
  @param dividerIndex
-	The index of the divider to position.
- @param	animated
-	Whether the positioning should be animated.
+    The index of the divider to position.
+ @param    animated
+    Whether the positioning should be animated.
  */
 - (void)setPosition:(CGFloat)position ofDividerAtIndex:(NSInteger)dividerIndex animated:(BOOL)animated;
 

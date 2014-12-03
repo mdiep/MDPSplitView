@@ -30,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		BEB6BE741A2E0C5F001D9407 /* CleanRoom-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CleanRoom-Bridging-Header.h"; sourceTree = "<group>"; };
-		BEB6BE751A2E0C5F001D9407 /* MDPSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPSplitView.h; sourceTree = "<group>"; };
+		BEB6BE751A2E0C5F001D9407 /* MDPSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPSplitView.h; sourceTree = "<group>"; usesTabs = 0; };
 		BEB6BE761A2E0C5F001D9407 /* MDPSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPSplitView.m; sourceTree = "<group>"; };
 		BECF653C1A013F1A00FB0844 /* CleanRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECF65401A013F1A00FB0844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
