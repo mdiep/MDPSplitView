@@ -2,7 +2,7 @@
 An `NSSplitView` subclass that provides a method to animate the position of a divider in a way that works with Auto Layout.
 
 ## Usage
-`MDPSplitView` adds a single method: `setPosition:ofDividerAtIndex:animated:`. This mirror’s `NSSplitView`’s `setPosition:ofDividerAtIndex:`, but adds an option to animate the position.
+`MDPSplitView` adds a single method: `setPosition:ofDividerAtIndex:animated:`. This mirrors `NSSplitView`’s `setPosition:ofDividerAtIndex:`, but adds an option to animate the position.
 
 In order to implement a minimum-width collapsing behavior, you’ll need to manually add and remove your width constraint when you move the divider. See the included demo project for an example.
 
