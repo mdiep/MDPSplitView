@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CleanRoom.xcodeproj">
+      location = "self:MDPSplitViewDemo.xcodeproj">
    </FileRef>
 </Workspace>

@@ -18,10 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BEB6BE741A2E0C5F001D9407 /* CleanRoom-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CleanRoom-Bridging-Header.h"; sourceTree = "<group>"; };
+		BEB6BE741A2E0C5F001D9407 /* MDPSplitViewDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDPSplitViewDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		BEB6BE751A2E0C5F001D9407 /* MDPSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPSplitView.h; sourceTree = "<group>"; usesTabs = 0; };
 		BEB6BE761A2E0C5F001D9407 /* MDPSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPSplitView.m; sourceTree = "<group>"; };
-		BECF653C1A013F1A00FB0844 /* CleanRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BECF653C1A013F1A00FB0844 /* MDPSplitViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDPSplitViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECF65401A013F1A00FB0844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BECF65411A013F1A00FB0844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BECF65431A013F1A00FB0844 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		BECF65331A013F1A00FB0844 = {
 			isa = PBXGroup;
 			children = (
-				BECF653E1A013F1A00FB0844 /* CleanRoom */,
+				BECF653E1A013F1A00FB0844 /* MDPSplitViewDemo */,
 				BECF653D1A013F1A00FB0844 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		BECF653D1A013F1A00FB0844 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BECF653C1A013F1A00FB0844 /* CleanRoom.app */,
+				BECF653C1A013F1A00FB0844 /* MDPSplitViewDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BECF653E1A013F1A00FB0844 /* CleanRoom */ = {
+		BECF653E1A013F1A00FB0844 /* MDPSplitViewDemo */ = {
 			isa = PBXGroup;
 			children = (
 				BECF65411A013F1A00FB0844 /* AppDelegate.swift */,
@@ -73,13 +73,13 @@
 				BECF656A1A016FEA00FB0844 /* SourceList.xib */,
 				BECF653F1A013F1A00FB0844 /* Supporting Files */,
 			);
-			path = CleanRoom;
+			path = MDPSplitViewDemo;
 			sourceTree = "<group>";
 		};
 		BECF653F1A013F1A00FB0844 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BEB6BE741A2E0C5F001D9407 /* CleanRoom-Bridging-Header.h */,
+				BEB6BE741A2E0C5F001D9407 /* MDPSplitViewDemo-Bridging-Header.h */,
 				BECF65401A013F1A00FB0844 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -88,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BECF653B1A013F1A00FB0844 /* CleanRoom */ = {
+		BECF653B1A013F1A00FB0844 /* MDPSplitViewDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BECF65561A013F1A00FB0844 /* Build configuration list for PBXNativeTarget "CleanRoom" */;
+			buildConfigurationList = BECF65561A013F1A00FB0844 /* Build configuration list for PBXNativeTarget "MDPSplitViewDemo" */;
 			buildPhases = (
 				BECF65381A013F1A00FB0844 /* Sources */,
 				BECF65391A013F1A00FB0844 /* Frameworks */,
@@ -100,9 +100,9 @@
 			);
 			dependencies = (
 			);
-			name = CleanRoom;
+			name = MDPSplitViewDemo;
 			productName = CleanRoom;
-			productReference = BECF653C1A013F1A00FB0844 /* CleanRoom.app */;
+			productReference = BECF653C1A013F1A00FB0844 /* MDPSplitViewDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -119,7 +119,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BECF65371A013F1A00FB0844 /* Build configuration list for PBXProject "CleanRoom" */;
+			buildConfigurationList = BECF65371A013F1A00FB0844 /* Build configuration list for PBXProject "MDPSplitViewDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -132,7 +132,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BECF653B1A013F1A00FB0844 /* CleanRoom */,
+				BECF653B1A013F1A00FB0844 /* MDPSplitViewDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -276,10 +276,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = CleanRoom/Info.plist;
+				INFOPLIST_FILE = MDPSplitViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CleanRoom/CleanRoom-Bridging-Header.h";
+				PRODUCT_NAME = MDPSplitViewDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "MDPSplitViewDemo/MDPSplitViewDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -290,17 +290,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = CleanRoom/Info.plist;
+				INFOPLIST_FILE = MDPSplitViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CleanRoom/CleanRoom-Bridging-Header.h";
+				PRODUCT_NAME = MDPSplitViewDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "MDPSplitViewDemo/MDPSplitViewDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BECF65371A013F1A00FB0844 /* Build configuration list for PBXProject "CleanRoom" */ = {
+		BECF65371A013F1A00FB0844 /* Build configuration list for PBXProject "MDPSplitViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BECF65541A013F1A00FB0844 /* Debug */,
@@ -309,7 +309,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BECF65561A013F1A00FB0844 /* Build configuration list for PBXNativeTarget "CleanRoom" */ = {
+		BECF65561A013F1A00FB0844 /* Build configuration list for PBXNativeTarget "MDPSplitViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BECF65571A013F1A00FB0844 /* Debug */,
