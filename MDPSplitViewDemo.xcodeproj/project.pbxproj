@@ -19,8 +19,8 @@
 
 /* Begin PBXFileReference section */
 		BEB6BE741A2E0C5F001D9407 /* MDPSplitViewDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDPSplitViewDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		BEB6BE751A2E0C5F001D9407 /* MDPSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPSplitView.h; sourceTree = "<group>"; usesTabs = 0; };
-		BEB6BE761A2E0C5F001D9407 /* MDPSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPSplitView.m; sourceTree = "<group>"; };
+		BEB6BE751A2E0C5F001D9407 /* MDPSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDPSplitView.h; path = ../MDPSplitView.h; sourceTree = "<group>"; usesTabs = 0; };
+		BEB6BE761A2E0C5F001D9407 /* MDPSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDPSplitView.m; path = ../MDPSplitView.m; sourceTree = "<group>"; };
 		BECF653C1A013F1A00FB0844 /* MDPSplitViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDPSplitViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECF65401A013F1A00FB0844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BECF65411A013F1A00FB0844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
