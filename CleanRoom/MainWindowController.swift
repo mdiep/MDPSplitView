@@ -9,7 +9,7 @@
 import Cocoa
 
 class MainWindowController: NSWindowController, NSSplitViewDelegate {
-	@IBOutlet weak var splitView: AnimatableSplitView!
+	@IBOutlet weak var splitView: MDPSplitView!
 	
 	let sourceList = SourceListController(nibName: "SourceList", bundle: nil)!
 	var lastWidth: CGFloat = 100

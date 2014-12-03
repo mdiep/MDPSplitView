@@ -1,12 +1,12 @@
 //
-//  AnimatableSplitView.m
+//  MDPSplitView.m
 //  CleanRoom
 //
 //  Created by Matt Diephouse on 12/2/14.
 //  Copyright (c) 2014 Matt Diephouse. All rights reserved.
 //
 
-#import "AnimatableSplitView.h"
+#import "MDPSplitView.h"
 
 
 #import <QuartzCore/QuartzCore.h>
@@ -29,7 +29,7 @@ static NSInteger MDPKeyToIndex(NSString *key)
 	return [formatter numberFromString:[key substringFromIndex:MDPKeyPrefix.length]].integerValue;
 }
 
-@implementation AnimatableSplitView
+@implementation MDPSplitView
 
 #pragma mark - NSView
 

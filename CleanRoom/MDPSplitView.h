@@ -1,5 +1,5 @@
 //
-//  AnimatableSplitView.h
+//  MDPSplitView.h
 //  CleanRoom
 //
 //  Created by Matt Diephouse on 12/2/14.
@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface AnimatableSplitView : NSSplitView
+@interface MDPSplitView : NSSplitView
 
 - (void)setPosition:(CGFloat)position ofDividerAtIndex:(NSInteger)dividerIndex animated:(BOOL)animated;
 
