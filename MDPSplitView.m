@@ -1,6 +1,5 @@
 //
 //  MDPSplitView.m
-//  CleanRoom
 //
 //  Created by Matt Diephouse on 12/2/14.
 //  Copyright (c) 2014 Matt Diephouse. All rights reserved.
