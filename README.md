@@ -13,7 +13,7 @@ To add `MDPSplitView` to your project:
 2. Add `MDPSplitView.h` and `MDPSplitView.m` to your project and target in Xcode.
 
 ## Credits
-This wouldn’t be possible without the help of @robrix. :sparkles:
+This wouldn’t be possible without the help of [@robrix](https://github.com/robrix). :sparkles:
 
 ## License
 Available under the [MIT License](LICENSE.md).
