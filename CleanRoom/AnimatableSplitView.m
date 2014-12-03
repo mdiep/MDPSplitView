@@ -92,7 +92,7 @@ static NSInteger MDPKeyToIndex(NSString *key)
 	}
 	else
 	{
-		[super setPosition:position ofDividerAtIndex:dividerIndex];
+		[self setPosition:position ofDividerAtIndex:dividerIndex];
 	}
 }
 
