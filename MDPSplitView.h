@@ -1,0 +1,51 @@
+//
+//  MDPSplitView.h
+//
+//  Created by Matt Diephouse on 12/2/14.
+//  Copyright (c) 2014 Matt Diephouse.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+
+#import <Cocoa/Cocoa.h>
+
+
+/*!
+ An `NSSplitView` subclass that provides a method to animate the position of a
+ divider in a way that works with Auto Layout.
+ */
+@interface MDPSplitView : NSSplitView
+
+/*!
+ Set the position of a divider, possibly with an animation.
+ 
+ @discussion
+    This method will use the split view's animator proxy to animate by calling
+    `-setPosition:ofDividerAtIndex:`.
+ 
+ @param position
+    The new position of the divider.
+ @param dividerIndex
+    The index of the divider to position.
+ @param    animated
+    Whether the positioning should be animated.
+ */
+- (void)setPosition:(CGFloat)position ofDividerAtIndex:(NSInteger)dividerIndex animated:(BOOL)animated;
+
+
+@end

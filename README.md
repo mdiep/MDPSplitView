@@ -1,12 +1,19 @@
-# NSSplitViewTest
+# MDPSplitView
+An `NSSplitView` subclass that provides a method to animate the position of a divider in a way that works with Auto Layout.
 
-This is a demo project to try animate an `NSSplitView` while collapsing/expanding one of its panes.
+## Usage
+`MDPSplitView` adds a single method: `setPosition:ofDividerAtIndex:animated:`. This mirror’s `NSSplitView`’s `setPosition:ofDividerAtIndex:`, but adds an option to animate the position.
 
-Test steps:
+In order to implement a minimum-width collapsing behavior, you’ll need to manually add and remove your width constraint when you move the divider. See the included demo project for an example.
 
-1. Launch the app
-2. Press Cmd-Opt-S to collapse/expand the source list
+## Setup
+To add `MDPSplitView` to your project:
 
-The source list should animate closed nicely. The split view should appear to move over the source list.
+1. Add the repository as a submodule (`git submodule add https://github.com/mdiep/MDPSplitView [<path>]`) or download `MDPSplitView.h` and `MDPSplitView.m`.
+2. Add `MDPSplitView.h` and `MDPSplitView.m` to your project and target in Xcode.
 
-Check Mail.app for the desired appearance.
+## Credits
+This wouldn’t be possible without the help of [@robrix](https://github.com/robrix). :sparkles:
+
+## License
+Available under the [MIT License](LICENSE.md).
