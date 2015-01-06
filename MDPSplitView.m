@@ -45,19 +45,23 @@ static NSInteger MDPKeyToIndex(NSString *key)
     return [formatter numberFromString:[key substringFromIndex:MDPKeyPrefix.length]].integerValue;
 }
 
+@interface MDPSplitView ()
+
+/*!
+ The number of active animations for each divider by index.
+ */
+@property (strong, nonatomic) NSCountedSet *mdp_animationCounts;
+
+@end
+
+static void CommonInit(MDPSplitView *self)
+{
+	self.mdp_animationCounts = [NSCountedSet new];
+}
+
 @implementation MDPSplitView
 
-#pragma mark - NSView
-
-+ (id)defaultAnimationForKey:(NSString *)key
-{
-    if ([key hasPrefix:MDPKeyPrefix])
-    {
-        return [CABasicAnimation new];
-    }
-    else
-        return [super defaultAnimationForKey:key];
-}
+#pragma mark - NSObject
 
 - (id)valueForKey:(NSString *)key
 {
@@ -98,18 +102,76 @@ static NSInteger MDPKeyToIndex(NSString *key)
 }
 
 
+#pragma mark - NSView
+
+- (instancetype)initWithFrame:(NSRect)frame
+{
+	self = [super initWithFrame:frame];
+	
+	if (self)
+	{
+		CommonInit(self);
+	}
+	
+	return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)decoder
+{
+	self = [super initWithCoder:decoder];
+	
+	if (self)
+	{
+		CommonInit(self);
+	}
+	
+	return self;
+}
+
++ (id)defaultAnimationForKey:(NSString *)key
+{
+    if ([key hasPrefix:MDPKeyPrefix])
+    {
+        return [CABasicAnimation new];
+    }
+    else
+        return [super defaultAnimationForKey:key];
+}
+
+
 #pragma mark - API
 
 - (void)setPosition:(CGFloat)position ofDividerAtIndex:(NSInteger)dividerIndex animated:(BOOL)animated
 {
     if (animated)
     {
-        [self.animator setValue:@(position) forKey:MDPKeyFromIndex(dividerIndex)];
+		[NSAnimationContext
+			runAnimationGroup:^(NSAnimationContext *context) {
+				@synchronized(self.mdp_animationCounts)
+				{
+					[self.mdp_animationCounts addObject:@(dividerIndex)];
+				}
+				[self.animator setValue:@(position) forKey:MDPKeyFromIndex(dividerIndex)];
+			}
+			completionHandler:^{
+				@synchronized(self.mdp_animationCounts)
+				{
+					[self.mdp_animationCounts removeObject:@(dividerIndex)];
+				}
+			}];
     }
     else
     {
         [self setPosition:position ofDividerAtIndex:dividerIndex];
     }
+}
+
+- (BOOL)isAnimatingDividerAtIndex:(NSInteger)dividerIndex
+{
+	@synchronized(self.mdp_animationCounts)
+	{
+		return [self.mdp_animationCounts countForObject:@(dividerIndex)];
+	}
 }
 
 
