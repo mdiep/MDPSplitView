@@ -147,17 +147,11 @@ static void CommonInit(MDPSplitView *self)
     {
 		[NSAnimationContext
 			runAnimationGroup:^(NSAnimationContext *context) {
-				@synchronized(self.mdp_animationCounts)
-				{
-					[self.mdp_animationCounts addObject:@(dividerIndex)];
-				}
+				[self.mdp_animationCounts addObject:@(dividerIndex)];
 				[self.animator setValue:@(position) forKey:MDPKeyFromIndex(dividerIndex)];
 			}
 			completionHandler:^{
-				@synchronized(self.mdp_animationCounts)
-				{
-					[self.mdp_animationCounts removeObject:@(dividerIndex)];
-				}
+				[self.mdp_animationCounts removeObject:@(dividerIndex)];
 			}];
     }
     else
@@ -168,10 +162,7 @@ static void CommonInit(MDPSplitView *self)
 
 - (BOOL)isAnimatingDividerAtIndex:(NSInteger)dividerIndex
 {
-	@synchronized(self.mdp_animationCounts)
-	{
-		return [self.mdp_animationCounts countForObject:@(dividerIndex)] > 0;
-	}
+	return [self.mdp_animationCounts countForObject:@(dividerIndex)] > 0;
 }
 
 
