@@ -50,13 +50,14 @@ static NSInteger MDPKeyToIndex(NSString *key)
 /*!
  The number of active animations for each divider by index.
  */
-@property (strong, nonatomic) NSCountedSet *mdp_animationCounts;
+@property (strong, nonatomic ) NSCountedSet *mdp_animationCounts;
 
 @end
 
-static void CommonInit(MDPSplitView *self)
+static MDPSplitView *CommonInit(MDPSplitView *self)
 {
 	self.mdp_animationCounts = [NSCountedSet new];
+	return self;
 }
 
 @implementation MDPSplitView
@@ -106,26 +107,12 @@ static void CommonInit(MDPSplitView *self)
 
 - (instancetype)initWithFrame:(NSRect)frame
 {
-	self = [super initWithFrame:frame];
-	
-	if (self)
-	{
-		CommonInit(self);
-	}
-	
-	return self;
+	return CommonInit([super initWithFrame:frame]);
 }
 
 - (instancetype)initWithCoder:(NSCoder *)decoder
 {
-	self = [super initWithCoder:decoder];
-	
-	if (self)
-	{
-		CommonInit(self);
-	}
-	
-	return self;
+	return CommonInit([super initWithCoder:decoder]);
 }
 
 + (id)defaultAnimationForKey:(NSString *)key
