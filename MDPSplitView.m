@@ -56,8 +56,8 @@ static NSInteger MDPKeyToIndex(NSString *key)
 
 static MDPSplitView *CommonInit(MDPSplitView *self)
 {
-	self.mdp_animationCounts = [NSCountedSet new];
-	return self;
+    self.mdp_animationCounts = [NSCountedSet new];
+    return self;
 }
 
 @implementation MDPSplitView
@@ -107,12 +107,12 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
 
 - (instancetype)initWithFrame:(NSRect)frame
 {
-	return CommonInit([super initWithFrame:frame]);
+    return CommonInit([super initWithFrame:frame]);
 }
 
 - (instancetype)initWithCoder:(NSCoder *)decoder
 {
-	return CommonInit([super initWithCoder:decoder]);
+    return CommonInit([super initWithCoder:decoder]);
 }
 
 + (id)defaultAnimationForKey:(NSString *)key
@@ -132,14 +132,14 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
 {
     if (animated)
     {
-		[NSAnimationContext
-			runAnimationGroup:^(NSAnimationContext *context) {
-				[self.mdp_animationCounts addObject:@(dividerIndex)];
-				[self.animator setValue:@(position) forKey:MDPKeyFromIndex(dividerIndex)];
-			}
-			completionHandler:^{
-				[self.mdp_animationCounts removeObject:@(dividerIndex)];
-			}];
+        [NSAnimationContext
+            runAnimationGroup:^(NSAnimationContext *context) {
+                [self.mdp_animationCounts addObject:@(dividerIndex)];
+                [self.animator setValue:@(position) forKey:MDPKeyFromIndex(dividerIndex)];
+            }
+            completionHandler:^{
+                [self.mdp_animationCounts removeObject:@(dividerIndex)];
+            }];
     }
     else
     {
@@ -149,7 +149,7 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
 
 - (BOOL)isAnimatingDividerAtIndex:(NSInteger)dividerIndex
 {
-	return [self.mdp_animationCounts countForObject:@(dividerIndex)] > 0;
+    return [self.mdp_animationCounts countForObject:@(dividerIndex)] > 0;
 }
 
 
