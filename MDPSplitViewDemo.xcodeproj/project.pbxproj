@@ -50,6 +50,7 @@
 				BECF653D1A013F1A00FB0844 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		BECF653D1A013F1A00FB0844 /* Products */ = {
 			isa = PBXGroup;

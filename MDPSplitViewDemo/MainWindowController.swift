@@ -15,7 +15,6 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
     var lastWidth: CGFloat = 100
     var duration: NSTimeInterval = 0.5
     var widthConstraint: NSLayoutConstraint?
-    var animatingSidaber = false
 
     override func awakeFromNib() {
         let leftView = self.splitView.subviews[0] as NSView
@@ -36,8 +35,8 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
     }
     
     func splitViewDidResizeSubviews(notification: NSNotification) {
-        if !animatingSidaber {
-            let leftView = self.splitView.subviews[0] as NSView
+        if !splitView.isAnimatingDividerAtIndex(0) {
+            let leftView = splitView.subviews[0] as NSView
             if !self.splitView.isSubviewCollapsed(leftView) {
                 let constraints = leftView.constraints as NSArray
                 if !constraints.containsObject(widthConstraint!) {
@@ -48,7 +47,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
     }
 
     @IBAction func toggleSourceList(sender: AnyObject?) {
-        if animatingSidaber {
+        if splitView.isAnimatingDividerAtIndex(0) {
             return
         }
         
@@ -64,8 +63,6 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
         } else {
             sourceView.frame.size.width = 0
         }
-
-        animatingSidaber = true
         
         NSAnimationContext.runAnimationGroup({ context in
             context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -73,7 +70,6 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
 
             self.splitView.setPosition(position, ofDividerAtIndex: 0, animated: true)
         }, completionHandler: {
-            self.animatingSidaber = false
             if !isOpen {
                 sourceView.addConstraint(self.widthConstraint!)
             }

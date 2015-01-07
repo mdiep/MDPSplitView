@@ -47,5 +47,10 @@
  */
 - (void)setPosition:(CGFloat)position ofDividerAtIndex:(NSInteger)dividerIndex animated:(BOOL)animated;
 
+/*!
+ Whether the divider at the given index is currently being animated.
+ */
+- (BOOL)isAnimatingDividerAtIndex:(NSInteger)dividerIndex;
+
 
 @end

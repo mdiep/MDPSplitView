@@ -10,15 +10,15 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-	var windowController = { MainWindowController(windowNibName: "MainWindow") }()
+    var windowController = { MainWindowController(windowNibName: "MainWindow") }()
 
-	func applicationDidFinishLaunching(aNotification: NSNotification) {
-		windowController.showWindow(nil)
-	}
+    func applicationDidFinishLaunching(aNotification: NSNotification) {
+        windowController.showWindow(nil)
+    }
 
-	func applicationWillTerminate(aNotification: NSNotification) {
-		// Insert code here to tear down your application
-	}
+    func applicationWillTerminate(aNotification: NSNotification) {
+        // Insert code here to tear down your application
+    }
 
 
 }
