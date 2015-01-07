@@ -170,7 +170,7 @@ static void CommonInit(MDPSplitView *self)
 {
 	@synchronized(self.mdp_animationCounts)
 	{
-		return [self.mdp_animationCounts countForObject:@(dividerIndex)];
+		return [self.mdp_animationCounts countForObject:@(dividerIndex)] > 0;
 	}
 }
 
