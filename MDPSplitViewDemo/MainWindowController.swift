@@ -33,8 +33,6 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
         let views = [
             "sourceList": sourceList.view,
             "infoPane":   infoPane.view,
-            "leftView":   leftView,
-            "rightView":  rightView,
         ]
         
         leftView.addSubview(sourceList.view)
