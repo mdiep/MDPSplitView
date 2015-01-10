@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="CleanRoom" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="MDPSplitViewDemo" customModuleProvider="target">
             <connections>
                 <outlet property="splitView" destination="u8E-lg-tDJ" id="RnZ-vb-jIE"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="eqs-7u-oFh"/>
@@ -84,7 +84,7 @@
                                         </constraints>
                                     </customView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M0g-gW-8VW">
-                                        <rect key="frame" x="233" y="13" width="81" height="32"/>
+                                        <rect key="frame" x="14" y="13" width="81" height="32"/>
                                         <buttonCell key="cell" type="push" title="Toggle" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FZq-tK-hPH">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -95,11 +95,11 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="M0g-gW-8VW" secondAttribute="trailing" constant="20" symbolic="YES" id="KbT-4t-j7G"/>
                                     <constraint firstAttribute="bottom" secondItem="M0g-gW-8VW" secondAttribute="bottom" constant="20" symbolic="YES" id="PEM-wG-YTa"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Qu2-XW-Otc"/>
                                     <constraint firstAttribute="centerY" secondItem="6ZR-uc-6Ov" secondAttribute="centerY" id="ZY1-86-Huu"/>
                                     <constraint firstAttribute="centerX" secondItem="6ZR-uc-6Ov" secondAttribute="centerX" id="Zrd-Ox-M2H"/>
+                                    <constraint firstItem="M0g-gW-8VW" firstAttribute="leading" secondItem="eTW-wC-kct" secondAttribute="leading" constant="20" symbolic="YES" id="kPl-Mb-mH5"/>
                                 </constraints>
                             </customView>
                         </subviews>
