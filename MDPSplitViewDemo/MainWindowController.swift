@@ -63,6 +63,15 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
                 }
             }
         }
+        
+        if !splitView.isAnimatingDividerAtIndex(1) {
+            if !self.splitView.isSubviewCollapsed(rightView) {
+                let constraints = rightView.constraints as NSArray
+                if !constraints.containsObject(infoWidthConstraint!) {
+                    rightView.addConstraint(infoWidthConstraint!)
+                }
+            }
+        }
     }
 
     @IBAction func toggleSourceList(sender: AnyObject?) {
