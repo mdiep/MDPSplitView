@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="CleanRoom" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="MDPSplitViewDemo" customModuleProvider="target">
             <connections>
                 <outlet property="splitView" destination="u8E-lg-tDJ" id="RnZ-vb-jIE"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="eqs-7u-oFh"/>
@@ -15,25 +15,25 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="contentRect" x="196" y="240" width="629" height="273"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <rect key="frame" x="0.0" y="0.0" width="629" height="273"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8E-lg-tDJ" customClass="MDPSplitView">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="629" height="273"/>
                         <subviews>
                             <customView fixedFrame="YES" id="1jB-0Q-YfT">
-                                <rect key="frame" x="0.0" y="0.0" width="151" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="273"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </customView>
                             <customView id="eTW-wC-kct">
-                                <rect key="frame" x="152" y="0.0" width="328" height="270"/>
+                                <rect key="frame" x="151" y="0.0" width="327" height="273"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="6ZR-uc-6Ov">
-                                        <rect key="frame" x="76" y="104" width="176" height="62"/>
+                                        <rect key="frame" x="76" y="106" width="176" height="62"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jEX-hN-o6t">
                                                 <rect key="frame" x="18" y="22" width="61" height="17"/>
@@ -84,7 +84,7 @@
                                         </constraints>
                                     </customView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M0g-gW-8VW">
-                                        <rect key="frame" x="233" y="13" width="81" height="32"/>
+                                        <rect key="frame" x="14" y="13" width="81" height="32"/>
                                         <buttonCell key="cell" type="push" title="Toggle" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FZq-tK-hPH">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -93,14 +93,30 @@
                                             <action selector="toggleSourceList:" target="-2" id="0wG-Lp-8Ex"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fIh-bn-f2G">
+                                        <rect key="frame" x="232" y="13" width="81" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Toggle" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fHV-76-rPm">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="toggleInfoPane:" target="-2" id="JTC-pK-TvI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="M0g-gW-8VW" secondAttribute="trailing" constant="20" symbolic="YES" id="KbT-4t-j7G"/>
                                     <constraint firstAttribute="bottom" secondItem="M0g-gW-8VW" secondAttribute="bottom" constant="20" symbolic="YES" id="PEM-wG-YTa"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Qu2-XW-Otc"/>
+                                    <constraint firstAttribute="trailing" secondItem="fIh-bn-f2G" secondAttribute="trailing" constant="20" symbolic="YES" id="Vgu-BZ-hXH"/>
                                     <constraint firstAttribute="centerY" secondItem="6ZR-uc-6Ov" secondAttribute="centerY" id="ZY1-86-Huu"/>
                                     <constraint firstAttribute="centerX" secondItem="6ZR-uc-6Ov" secondAttribute="centerX" id="Zrd-Ox-M2H"/>
+                                    <constraint firstAttribute="bottom" secondItem="fIh-bn-f2G" secondAttribute="bottom" constant="20" symbolic="YES" id="hVM-gg-tnv"/>
+                                    <constraint firstItem="M0g-gW-8VW" firstAttribute="leading" secondItem="eTW-wC-kct" secondAttribute="leading" constant="20" symbolic="YES" id="kPl-Mb-mH5"/>
                                 </constraints>
+                            </customView>
+                            <customView fixedFrame="YES" id="pHv-Iy-xbA">
+                                <rect key="frame" x="479" y="0.0" width="150" height="273"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </customView>
                         </subviews>
                         <constraints>
@@ -109,6 +125,7 @@
                         <holdingPriorities>
                             <real value="251"/>
                             <real value="250"/>
+                            <real value="251"/>
                         </holdingPriorities>
                         <connections>
                             <outlet property="delegate" destination="-2" id="w5t-3B-5vh"/>
@@ -122,6 +139,7 @@
                     <constraint firstAttribute="trailing" secondItem="u8E-lg-tDJ" secondAttribute="trailing" id="ecR-TG-vzA"/>
                 </constraints>
             </view>
+            <point key="canvasLocation" x="399.5" y="342.5"/>
         </window>
     </objects>
 </document>

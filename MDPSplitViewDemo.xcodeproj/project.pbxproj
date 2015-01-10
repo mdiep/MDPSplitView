@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE43EACA1A61C06F0056D29F /* InfoPaneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE43EAC91A61C06F0056D29F /* InfoPaneController.swift */; };
+		BE43EACD1A61C0810056D29F /* InfoPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE43EACB1A61C0810056D29F /* InfoPane.xib */; };
 		BEB6BE771A2E0C5F001D9407 /* MDPSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB6BE761A2E0C5F001D9407 /* MDPSplitView.m */; };
 		BECF65421A013F1A00FB0844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF65411A013F1A00FB0844 /* AppDelegate.swift */; };
 		BECF65441A013F1A00FB0844 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BECF65431A013F1A00FB0844 /* Images.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE43EAC91A61C06F0056D29F /* InfoPaneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPaneController.swift; sourceTree = "<group>"; };
+		BE43EACC1A61C0810056D29F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InfoPane.xib; sourceTree = "<group>"; };
 		BEB6BE741A2E0C5F001D9407 /* MDPSplitViewDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDPSplitViewDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		BEB6BE751A2E0C5F001D9407 /* MDPSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDPSplitView.h; path = ../MDPSplitView.h; sourceTree = "<group>"; usesTabs = 0; };
 		BEB6BE761A2E0C5F001D9407 /* MDPSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDPSplitView.m; path = ../MDPSplitView.m; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 				BECF65431A013F1A00FB0844 /* Images.xcassets */,
 				BEB6BE751A2E0C5F001D9407 /* MDPSplitView.h */,
 				BEB6BE761A2E0C5F001D9407 /* MDPSplitView.m */,
+				BE43EAC91A61C06F0056D29F /* InfoPaneController.swift */,
+				BE43EACB1A61C0810056D29F /* InfoPane.xib */,
 				BECF65451A013F1A00FB0844 /* MainMenu.xib */,
 				BECF65631A016CCA00FB0844 /* MainWindow.xib */,
 				BECF65661A016CD700FB0844 /* MainWindowController.swift */,
@@ -146,6 +152,7 @@
 				BECF656C1A016FEA00FB0844 /* SourceList.xib in Resources */,
 				BECF65441A013F1A00FB0844 /* Images.xcassets in Resources */,
 				BECF65471A013F1A00FB0844 /* MainMenu.xib in Resources */,
+				BE43EACD1A61C0810056D29F /* InfoPane.xib in Resources */,
 				BECF65651A016CCA00FB0844 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BECF65671A016CD700FB0844 /* MainWindowController.swift in Sources */,
+				BE43EACA1A61C06F0056D29F /* InfoPaneController.swift in Sources */,
 				BEB6BE771A2E0C5F001D9407 /* MDPSplitView.m in Sources */,
 				BECF65691A016FDE00FB0844 /* SourceListController.swift in Sources */,
 				BECF65421A013F1A00FB0844 /* AppDelegate.swift in Sources */,
@@ -167,6 +175,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BE43EACB1A61C0810056D29F /* InfoPane.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE43EACC1A61C0810056D29F /* Base */,
+			);
+			name = InfoPane.xib;
+			sourceTree = "<group>";
+		};
 		BECF65451A013F1A00FB0844 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

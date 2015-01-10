@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="InfoPaneController" customModule="MDPSplitViewDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="c22-O7-iKe" id="Zxg-wo-fSw"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="396"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="aKs-mp-D2t">
+                    <rect key="frame" x="83" y="190" width="28" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Info" id="0wL-UU-OgH">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="aKs-mp-D2t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" symbolic="YES" id="J1l-8P-nko"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aKs-mp-D2t" secondAttribute="bottom" constant="20" symbolic="YES" id="K8y-iy-XSC"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aKs-mp-D2t" secondAttribute="trailing" constant="20" symbolic="YES" id="Mxz-dY-zNb"/>
+                <constraint firstAttribute="centerX" secondItem="aKs-mp-D2t" secondAttribute="centerX" id="Whw-Cw-Etd"/>
+                <constraint firstAttribute="centerY" secondItem="aKs-mp-D2t" secondAttribute="centerY" id="Y8A-2T-JR7"/>
+                <constraint firstItem="aKs-mp-D2t" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" symbolic="YES" id="yDi-hp-1xI"/>
+            </constraints>
+            <point key="canvasLocation" x="182" y="410"/>
+        </customView>
+    </objects>
+</document>
