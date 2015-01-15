@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		BE43EACA1A61C06F0056D29F /* InfoPaneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE43EAC91A61C06F0056D29F /* InfoPaneController.swift */; };
 		BE43EACD1A61C0810056D29F /* InfoPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE43EACB1A61C0810056D29F /* InfoPane.xib */; };
-		BEB6BE771A2E0C5F001D9407 /* MDPSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB6BE761A2E0C5F001D9407 /* MDPSplitView.m */; };
+		BE97AE6B1A6824010008DDCF /* MDPSplitView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE97AE6A1A6823EC0008DDCF /* MDPSplitView.framework */; };
+		BE97AE6D1A6824190008DDCF /* MDPSplitView.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = BE97AE6A1A6823EC0008DDCF /* MDPSplitView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BECF65421A013F1A00FB0844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF65411A013F1A00FB0844 /* AppDelegate.swift */; };
 		BECF65441A013F1A00FB0844 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BECF65431A013F1A00FB0844 /* Images.xcassets */; };
 		BECF65471A013F1A00FB0844 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECF65451A013F1A00FB0844 /* MainMenu.xib */; };
@@ -19,12 +20,35 @@
 		BECF656C1A016FEA00FB0844 /* SourceList.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECF656A1A016FEA00FB0844 /* SourceList.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BE97AE691A6823EC0008DDCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE97AE601A6823D40008DDCF /* MDPSplitView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF8D8641A6821B9005B8FAA;
+			remoteInfo = MDPSplitView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BE97AE6C1A6824060008DDCF /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BE97AE6D1A6824190008DDCF /* MDPSplitView.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BE43EAC91A61C06F0056D29F /* InfoPaneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPaneController.swift; sourceTree = "<group>"; };
 		BE43EACC1A61C0810056D29F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InfoPane.xib; sourceTree = "<group>"; };
+		BE97AE601A6823D40008DDCF /* MDPSplitView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MDPSplitView.xcodeproj; path = ../MDPSplitView.xcodeproj; sourceTree = "<group>"; };
 		BEB6BE741A2E0C5F001D9407 /* MDPSplitViewDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDPSplitViewDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		BEB6BE751A2E0C5F001D9407 /* MDPSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDPSplitView.h; path = ../MDPSplitView.h; sourceTree = "<group>"; usesTabs = 0; };
-		BEB6BE761A2E0C5F001D9407 /* MDPSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDPSplitView.m; path = ../MDPSplitView.m; sourceTree = "<group>"; };
 		BECF653C1A013F1A00FB0844 /* MDPSplitViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDPSplitViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECF65401A013F1A00FB0844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BECF65411A013F1A00FB0844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,12 +65,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE97AE6B1A6824010008DDCF /* MDPSplitView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE97AE661A6823EC0008DDCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE97AE6A1A6823EC0008DDCF /* MDPSplitView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BECF65331A013F1A00FB0844 = {
 			isa = PBXGroup;
 			children = (
@@ -67,10 +100,9 @@
 		BECF653E1A013F1A00FB0844 /* MDPSplitViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BE97AE601A6823D40008DDCF /* MDPSplitView.xcodeproj */,
 				BECF65411A013F1A00FB0844 /* AppDelegate.swift */,
 				BECF65431A013F1A00FB0844 /* Images.xcassets */,
-				BEB6BE751A2E0C5F001D9407 /* MDPSplitView.h */,
-				BEB6BE761A2E0C5F001D9407 /* MDPSplitView.m */,
 				BE43EAC91A61C06F0056D29F /* InfoPaneController.swift */,
 				BE43EACB1A61C0810056D29F /* InfoPane.xib */,
 				BECF65451A013F1A00FB0844 /* MainMenu.xib */,
@@ -101,6 +133,7 @@
 			buildPhases = (
 				BECF65381A013F1A00FB0844 /* Sources */,
 				BECF65391A013F1A00FB0844 /* Frameworks */,
+				BE97AE6C1A6824060008DDCF /* Copy Frameworks */,
 				BECF653A1A013F1A00FB0844 /* Resources */,
 			);
 			buildRules = (
@@ -137,12 +170,28 @@
 			mainGroup = BECF65331A013F1A00FB0844;
 			productRefGroup = BECF653D1A013F1A00FB0844 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BE97AE661A6823EC0008DDCF /* Products */;
+					ProjectRef = BE97AE601A6823D40008DDCF /* MDPSplitView.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BECF653B1A013F1A00FB0844 /* MDPSplitViewDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BE97AE6A1A6823EC0008DDCF /* MDPSplitView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MDPSplitView.framework;
+			remoteRef = BE97AE691A6823EC0008DDCF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BECF653A1A013F1A00FB0844 /* Resources */ = {
@@ -166,7 +215,6 @@
 			files = (
 				BECF65671A016CD700FB0844 /* MainWindowController.swift in Sources */,
 				BE43EACA1A61C06F0056D29F /* InfoPaneController.swift in Sources */,
-				BEB6BE771A2E0C5F001D9407 /* MDPSplitView.m in Sources */,
 				BECF65691A016FDE00FB0844 /* SourceListController.swift in Sources */,
 				BECF65421A013F1A00FB0844 /* AppDelegate.swift in Sources */,
 			);
