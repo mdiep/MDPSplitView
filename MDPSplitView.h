@@ -24,6 +24,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+//! Project version number for MDPSplitView.
+FOUNDATION_EXPORT double MDPSplitViewVersionNumber;
+
+//! Project version string for MDPSplitView.
+FOUNDATION_EXPORT const unsigned char MDPSplitViewVersionString[];
 
 /*!
  An `NSSplitView` subclass that provides a method to animate the position of a
