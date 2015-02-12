@@ -83,6 +83,14 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
         NSInteger index = MDPKeyToIndex(key);
         CGFloat newPosition = [(NSNumber *)value floatValue];
         
+        NSView *view1 = self.subviews[index];
+        NSView *view2 = self.subviews[index + 1];
+        
+        // Unhide collapsed items. It's not clear why NSSplitView
+        // doesn't do this on 10.9.
+        view1.hidden = NO;
+        view2.hidden = NO;
+        
         [self setPosition:newPosition ofDividerAtIndex:index];
         
         // If a split view item is "collapsed", then it's hidden.
@@ -95,8 +103,8 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
             }
         };
         
-        hideViewIfNecessary(self.subviews[index]);
-        hideViewIfNecessary(self.subviews[index + 1]);
+        hideViewIfNecessary(view1);
+        hideViewIfNecessary(view2);
     }
     else
         [super setValue:value forKey:key];
