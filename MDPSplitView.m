@@ -140,6 +140,22 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
 {
     if (animated)
     {
+        NSView *view1 = self.subviews[dividerIndex];
+        NSView *view2 = self.subviews[dividerIndex + 1];
+        
+        // NSSplitView is adding bogus width constraints. Remove them
+        // manually.
+        for (NSLayoutConstraint *constraint in self.constraints) {
+            NSView *firstItem = constraint.firstItem;
+            if (!([firstItem isEqual:view1] || [firstItem isEqual:view2])) continue;
+            if (constraint.firstAttribute != (self.isVertical ? NSLayoutAttributeWidth : NSLayoutAttributeHeight)) continue;
+            if (constraint.relation != NSLayoutRelationEqual) continue;
+            if (constraint.secondItem != nil) continue;
+            if (constraint.priority != NSLayoutPriorityRequired) continue;
+            
+            [self removeConstraint:constraint];
+        }
+        
         [NSAnimationContext
             runAnimationGroup:^(NSAnimationContext *context) {
                 [self.mdp_animationCounts addObject:@(dividerIndex)];
