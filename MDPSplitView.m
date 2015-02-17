@@ -28,6 +28,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 static NSString * const MDPKeyPrefix = @"mdp_";
+static BOOL MDPSplitViewRunning10_10OrLater;
 
 static NSString *MDPKeyFromIndex(NSInteger index)
 {
@@ -56,6 +57,10 @@ static NSInteger MDPKeyToIndex(NSString *key)
 
 static MDPSplitView *CommonInit(MDPSplitView *self)
 {
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		MDPSplitViewRunning10_10OrLater = [NSProcessInfo instancesRespondToSelector:@selector(operatingSystemVersion)];
+	});
     self.mdp_animationCounts = [NSCountedSet new];
     return self;
 }
@@ -80,31 +85,35 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
 {
     if ([key hasPrefix:MDPKeyPrefix])
     {
+		BOOL (^viewIsClosed)(NSView *) = ^ BOOL (NSView *view) {
+			return (self.isVertical ? NSWidth(view.frame) : NSHeight(view.frame)) == 0;
+		};
+		
         NSInteger index = MDPKeyToIndex(key);
         CGFloat newPosition = [(NSNumber *)value floatValue];
         
         NSView *view1 = self.subviews[index];
         NSView *view2 = self.subviews[index + 1];
-        
-        // Unhide collapsed items. It's not clear why NSSplitView
-        // doesn't do this on 10.9.
-        view1.hidden = NO;
-        view2.hidden = NO;
-        
+		
+		BOOL view1WasClosed = viewIsClosed(view1);
+		BOOL view2WasClosed = viewIsClosed(view2);
+		
         [self setPosition:newPosition ofDividerAtIndex:index];
-        
-        // If a split view item is "collapsed", then it's hidden.
-        // I'm not sure why NSSplitView isn't doing this.
-        void (^hideViewIfNecessary)(NSView *) = ^(NSView *view) {
-            CGFloat width = (self.isVertical ? NSWidth(view.frame) : NSHeight(view.frame));
-            if (width == 0 && [self.delegate splitView:self canCollapseSubview:view])
-            {
-                view.hidden = YES;
-            }
-        };
-        
-        hideViewIfNecessary(view1);
-        hideViewIfNecessary(view2);
+		
+		BOOL view1IsClosed = viewIsClosed(view1);
+		BOOL view2IsClosed = viewIsClosed(view2);
+		
+		// Why doesn't NSSplitView do this itself? I dunno. But it's buggy on
+		// 10.9 at least. But it doesn't work to set them all the time. You have
+		// to set the property only when the state should change.
+		if (view1WasClosed != view1IsClosed)
+		{
+			view1.hidden = view1IsClosed;
+		}
+		if (view2WasClosed != view2IsClosed)
+		{
+			view2.hidden = view2IsClosed;
+		}
     }
     else
         [super setValue:value forKey:key];
