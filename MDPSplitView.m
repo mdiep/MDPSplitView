@@ -28,6 +28,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 static NSString * const MDPKeyPrefix = @"mdp_";
+static BOOL MDPSplitViewRunning10_10OrLater;
 
 static NSString *MDPKeyFromIndex(NSInteger index)
 {
@@ -56,6 +57,10 @@ static NSInteger MDPKeyToIndex(NSString *key)
 
 static MDPSplitView *CommonInit(MDPSplitView *self)
 {
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		MDPSplitViewRunning10_10OrLater = [NSProcessInfo instancesRespondToSelector:@selector(operatingSystemVersion)];
+	});
     self.mdp_animationCounts = [NSCountedSet new];
     return self;
 }
@@ -88,9 +93,12 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
         
         // Unhide collapsed items. It's not clear why NSSplitView
         // doesn't do this on 10.9.
-        view1.hidden = NO;
-        view2.hidden = NO;
-        
+		if (!MDPSplitViewRunning10_10OrLater)
+		{
+			view1.hidden = NO;
+			view2.hidden = NO;
+		}
+		
         [self setPosition:newPosition ofDividerAtIndex:index];
         
         // If a split view item is "collapsed", then it's hidden.
