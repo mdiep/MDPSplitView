@@ -16,6 +16,8 @@ To add `MDPSplitView` to your project:
 
 Or you can use [Carthage](https://github.com/Carthage/Carthage/).
 
+Or you can use a Podfile: `pod "MDPSplitView"`
+
 ## Credits
 This wouldn’t be possible without the help of [@robrix](https://github.com/robrix). :sparkles:
 
