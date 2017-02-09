@@ -142,6 +142,12 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
         return [super defaultAnimationForKey:key];
 }
 
+- (void)didAddSubview:(NSView *)subview {
+	subview.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+	subview.translatesAutoresizingMaskIntoConstraints = YES;
+	[super didAddSubview:subview];
+}
+
 
 #pragma mark - API
 
