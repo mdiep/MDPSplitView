@@ -52,7 +52,7 @@
 				BE97AE5D1A6823B20008DDCF /* MDPSplitView.m */,
 				BEF8D8681A6821B9005B8FAA /* Info.plist */,
 			);
-			path = MDPSplitView;
+			name = MDPSplitView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
