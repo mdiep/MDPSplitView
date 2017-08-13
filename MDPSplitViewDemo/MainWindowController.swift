@@ -75,57 +75,54 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
     }
 
     @IBAction func toggleSourceList(_ sender: AnyObject?) {
-        if splitView.isAnimatingDivider(at: 0) {
-            return
-        }
-        
-        let isOpen = !splitView.isSubviewCollapsed(leftView)
-        let position = (isOpen ? 0 : lastSourceWidth)
-
-        leftView.removeConstraint(sourceWidthConstraint!)
-        
-        if isOpen {
-            lastSourceWidth = sourceList.view.frame.size.width
-        } else {
-            leftView.frame.size.width = 0
-        }
-        
-        NSAnimationContext.runAnimationGroup({ context in
-            context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-            context.duration = self.duration
-
-            self.splitView.setPosition(position, ofDividerAt: 0, animated: true)
-        }, completionHandler: {
-            if !isOpen {
-                self.leftView.addConstraint(self.sourceWidthConstraint!)
-            }
-        })
+        toggleSubview(self.leftView,
+                      dividerIndex: 0,
+                      paneView: sourceList.view,
+                      lastWidth: &lastSourceWidth,
+                      widthConstraint: sourceWidthConstraint)
     }
     
     @IBAction func toggleInfoPane(_ sender: AnyObject?) {
-        if splitView.isAnimatingDividerAtIndex(1) {
+        toggleSubview(self.rightView,
+                      dividerIndex: 1,
+                      paneView: infoPane.view,
+                      lastWidth: &lastInfoWidth,
+                      widthConstraint: infoWidthConstraint)
+    }
+    
+    fileprivate func toggleSubview(_ subview: NSView,
+                                   dividerIndex: Int,
+                                   paneView: NSView,
+                                   lastWidth: inout CGFloat,
+                                   widthConstraint: NSLayoutConstraint?) {
+        if splitView.isAnimatingDivider(at: dividerIndex) {
             return
         }
         
-        let isOpen = !splitView.isSubviewCollapsed(rightView)
-        let position = splitView.frame.size.width - (isOpen ? 0 : lastInfoWidth)
+        let isOpen = !(splitView.isSubviewCollapsed(subview))
+        var position = (isOpen ? 0 : lastWidth)
+        if (subview == self.rightView) {
+            position = splitView.frame.size.width - position;
+        }
         
-        rightView.removeConstraint(infoWidthConstraint!)
+        subview.removeConstraint(widthConstraint!)
         
         if isOpen {
-            lastInfoWidth = infoPane.view.frame.size.width
+            lastWidth = paneView.frame.size.width
         } else {
-            rightView.frame.size.width = 0
+            subview.frame.size.width = 0
         }
         
         NSAnimationContext.runAnimationGroup({ context in
             context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             context.duration = self.duration
             
-            self.splitView.setPosition(position, ofDividerAtIndex: 1, animated: true)
+            self.splitView.setPosition(position,
+                                       ofDividerAt: dividerIndex,
+                                       animated: true)
         }, completionHandler: {
             if !isOpen {
-                self.rightView.addConstraint(self.infoWidthConstraint!)
+                subview.addConstraint(widthConstraint!)
             }
         })
     }
