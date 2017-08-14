@@ -36,15 +36,15 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
         ]
         
         leftView.addSubview(sourceList.view)
-        leftView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[sourceList]-(0@250)-|", options: nil, metrics: nil, views: views))
-        leftView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[sourceList]|", options: nil, metrics: nil, views: views))
+        leftView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[sourceList]-(0@250)-|", options: [], metrics: nil, views: views))
+        leftView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[sourceList]|", options: [], metrics: nil, views: views))
         
         sourceWidthConstraint = NSLayoutConstraint(item: sourceList.view, attribute: .Trailing, relatedBy: .Equal, toItem: leftView, attribute: .Trailing, multiplier: 1, constant: 0)
         leftView.addConstraint(sourceWidthConstraint!)
         
         rightView.addSubview(infoPane.view)
-        rightView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(0@250)-[infoPane]|", options: nil, metrics: nil, views: views))
-        rightView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[infoPane]|", options: nil, metrics: nil, views: views))
+        rightView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(0@250)-[infoPane]|", options: [], metrics: nil, views: views))
+        rightView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[infoPane]|", options: [], metrics: nil, views: views))
         
         infoWidthConstraint = NSLayoutConstraint(item: infoPane.view, attribute: .Leading, relatedBy: .Equal, toItem: rightView, attribute: .Leading, multiplier: 1, constant: 0)
         rightView.addConstraint(infoWidthConstraint!)
