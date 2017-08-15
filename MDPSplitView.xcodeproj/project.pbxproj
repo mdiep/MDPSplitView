@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D130BE81F436ED2007CF023 /* MDPSplitView+SubviewToggleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D130BE51F436EC1007CF023 /* MDPSplitView+SubviewToggleHelper.m */; };
+		3D6290B01F43734B00B04579 /* MDPSplitView+SubviewToggleHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D130BE61F436EC1007CF023 /* MDPSplitView+SubviewToggleHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE97AE5E1A6823B20008DDCF /* MDPSplitView.h in Headers */ = {isa = PBXBuildFile; fileRef = BE97AE5C1A6823B20008DDCF /* MDPSplitView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE97AE5F1A6823B20008DDCF /* MDPSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE97AE5D1A6823B20008DDCF /* MDPSplitView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D130BE51F436EC1007CF023 /* MDPSplitView+SubviewToggleHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MDPSplitView+SubviewToggleHelper.m"; sourceTree = "<group>"; };
+		3D130BE61F436EC1007CF023 /* MDPSplitView+SubviewToggleHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDPSplitView+SubviewToggleHelper.h"; sourceTree = "<group>"; };
 		BE97AE5C1A6823B20008DDCF /* MDPSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPSplitView.h; sourceTree = SOURCE_ROOT; };
 		BE97AE5D1A6823B20008DDCF /* MDPSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPSplitView.m; sourceTree = SOURCE_ROOT; };
 		BEF8D8641A6821B9005B8FAA /* MDPSplitView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDPSplitView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +54,8 @@
 			children = (
 				BE97AE5C1A6823B20008DDCF /* MDPSplitView.h */,
 				BE97AE5D1A6823B20008DDCF /* MDPSplitView.m */,
+				3D130BE61F436EC1007CF023 /* MDPSplitView+SubviewToggleHelper.h */,
+				3D130BE51F436EC1007CF023 /* MDPSplitView+SubviewToggleHelper.m */,
 				BEF8D8681A6821B9005B8FAA /* Info.plist */,
 			);
 			name = MDPSplitView;
@@ -63,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE97AE5E1A6823B20008DDCF /* MDPSplitView.h in Headers */,
+				3D6290B01F43734B00B04579 /* MDPSplitView+SubviewToggleHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE97AE5F1A6823B20008DDCF /* MDPSplitView.m in Sources */,
+				3D130BE81F436ED2007CF023 /* MDPSplitView+SubviewToggleHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

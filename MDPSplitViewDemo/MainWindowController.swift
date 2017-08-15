@@ -73,61 +73,24 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
             }
         }
     }
-
+    
     @IBAction func toggleSourceList(_ sender: AnyObject?) {
-        toggleSubview(self.leftView,
-                      dividerIndex: 0,
-                      paneView: sourceList.view,
-                      lastExtent: &lastSourceWidth,
-                      collapseRightward: false,
-                      widthConstraint: sourceWidthConstraint)
+        self.splitView.toggleSubview(self.leftView,
+                                     dividerIndex: 0,
+                                     lastWidth: &lastSourceWidth,
+                                     animationDuration: duration,
+                                     collapsesRightward: false,
+                                     widthConstraint: sourceWidthConstraint!,
+                                     completionHandler: nil)
     }
     
     @IBAction func toggleInfoPane(_ sender: AnyObject?) {
-        toggleSubview(self.rightView,
-                      dividerIndex: 1,
-                      paneView: infoPane.view,
-                      lastExtent: &lastInfoWidth,
-                      collapseRightward: true,
-                      widthConstraint: infoWidthConstraint)
-    }
-    
-    fileprivate func toggleSubview(_ subview: NSView,
-                                   dividerIndex: Int,
-                                   paneView: NSView,
-                                   lastExtent: inout CGFloat,
-                                   collapseRightward: Bool,
-                                   widthConstraint: NSLayoutConstraint?) {
-        if splitView.isAnimatingDivider(at: dividerIndex) {
-            return
-        }
-        
-        let isOpen = !(splitView.isSubviewCollapsed(subview))
-        
-        var position = (isOpen ? 0 : lastExtent)
-        if (collapseRightward) {
-            position = splitView.frame.size.width - position;
-        }
-        
-        subview.removeConstraint(widthConstraint!)
-        
-        if isOpen {
-            lastExtent = paneView.frame.size.width
-        } else {
-            subview.frame.size.width = 0
-        }
-        
-        NSAnimationContext.runAnimationGroup({ context in
-            context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-            context.duration = self.duration
-            
-            self.splitView.setPosition(position,
-                                       ofDividerAt: dividerIndex,
-                                       animated: true)
-        }, completionHandler: {
-            if !isOpen {
-                subview.addConstraint(widthConstraint!)
-            }
-        })
+        self.splitView.toggleSubview(self.rightView,
+                                     dividerIndex: 1,
+                                     lastWidth: &lastInfoWidth,
+                                     animationDuration: duration,
+                                     collapsesRightward: true,
+                                     widthConstraint: infoWidthConstraint!,
+                                     completionHandler: nil)
     }
 }

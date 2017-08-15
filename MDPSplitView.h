@@ -59,3 +59,6 @@ FOUNDATION_EXPORT const unsigned char MDPSplitViewVersionString[];
 
 
 @end
+
+#import "MDPSplitView+SubviewToggleHelper.h"
+
