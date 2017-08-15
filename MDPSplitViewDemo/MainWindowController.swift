@@ -78,7 +78,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
         toggleSubview(self.leftView,
                       dividerIndex: 0,
                       paneView: sourceList.view,
-                      lastWidth: &lastSourceWidth,
+                      lastExtent: &lastSourceWidth,
                       collapseRightward: false,
                       widthConstraint: sourceWidthConstraint)
     }
@@ -87,7 +87,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
         toggleSubview(self.rightView,
                       dividerIndex: 1,
                       paneView: infoPane.view,
-                      lastWidth: &lastInfoWidth,
+                      lastExtent: &lastInfoWidth,
                       collapseRightward: true,
                       widthConstraint: infoWidthConstraint)
     }
@@ -95,7 +95,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
     fileprivate func toggleSubview(_ subview: NSView,
                                    dividerIndex: Int,
                                    paneView: NSView,
-                                   lastWidth: inout CGFloat,
+                                   lastExtent: inout CGFloat,
                                    collapseRightward: Bool,
                                    widthConstraint: NSLayoutConstraint?) {
         if splitView.isAnimatingDivider(at: dividerIndex) {
@@ -104,7 +104,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
         
         let isOpen = !(splitView.isSubviewCollapsed(subview))
         
-        var position = (isOpen ? 0 : lastWidth)
+        var position = (isOpen ? 0 : lastExtent)
         if (collapseRightward) {
             position = splitView.frame.size.width - position;
         }
@@ -112,7 +112,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
         subview.removeConstraint(widthConstraint!)
         
         if isOpen {
-            lastWidth = paneView.frame.size.width
+            lastExtent = paneView.frame.size.width
         } else {
             subview.frame.size.width = 0
         }
