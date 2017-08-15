@@ -79,6 +79,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
                       dividerIndex: 0,
                       paneView: sourceList.view,
                       lastWidth: &lastSourceWidth,
+                      collapseRightward: false,
                       widthConstraint: sourceWidthConstraint)
     }
     
@@ -87,6 +88,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
                       dividerIndex: 1,
                       paneView: infoPane.view,
                       lastWidth: &lastInfoWidth,
+                      collapseRightward: true,
                       widthConstraint: infoWidthConstraint)
     }
     
@@ -94,6 +96,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
                                    dividerIndex: Int,
                                    paneView: NSView,
                                    lastWidth: inout CGFloat,
+                                   collapseRightward: Bool,
                                    widthConstraint: NSLayoutConstraint?) {
         if splitView.isAnimatingDivider(at: dividerIndex) {
             return
@@ -101,7 +104,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
         
         let isOpen = !(splitView.isSubviewCollapsed(subview))
         var position = (isOpen ? 0 : lastWidth)
-        if (subview == self.rightView) {
+        if (collapseRightward) {
             position = splitView.frame.size.width - position;
         }
         
