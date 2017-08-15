@@ -103,6 +103,7 @@ class MainWindowController: NSWindowController, NSSplitViewDelegate {
         }
         
         let isOpen = !(splitView.isSubviewCollapsed(subview))
+        
         var position = (isOpen ? 0 : lastWidth)
         if (collapseRightward) {
             position = splitView.frame.size.width - position;
