@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="194" height="396"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="aKs-mp-D2t">
-                    <rect key="frame" x="83" y="190" width="28" height="17"/>
+                    <rect key="frame" x="84" y="190" width="27" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Info" id="0wL-UU-OgH">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
