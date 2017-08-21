@@ -62,20 +62,20 @@ FOUNDATION_EXPORT const unsigned char MDPSplitViewVersionString[];
 
 
 - (void)toggleSubview:(NSView * _Nonnull)subview
-		 dividerIndex:(NSUInteger)dividerIndex
-			lastWidth:(CGFloat * _Nonnull)lastWidth
-	animationDuration:(NSTimeInterval)duration
+         dividerIndex:(NSUInteger)dividerIndex
+            lastWidth:(CGFloat * _Nonnull)lastWidth
+    animationDuration:(NSTimeInterval)duration
    collapsesRightward:(BOOL)collapsesRightward
-	  widthConstraint:(NSLayoutConstraint * _Nonnull)widthConstraint
-	completionHandler:(nullable void (^)(BOOL isOpen))completionHandler;
+      widthConstraint:(NSLayoutConstraint * _Nonnull)widthConstraint
+    completionHandler:(nullable void (^)(BOOL isOpen))completionHandler;
 
 - (void)toggleSubview:(NSView * _Nonnull)subview
-		 dividerIndex:(NSUInteger)dividerIndex
-		   lastHeight:(CGFloat * _Nonnull)lastHeight
-	animationDuration:(NSTimeInterval)duration
-	  collapsesUpward:(BOOL)collapsesUpwards
-	 heightConstraint:(NSLayoutConstraint * _Nonnull)heightConstraint
-	completionHandler:(nullable void (^)(BOOL isOpen))completionHandler;
+         dividerIndex:(NSUInteger)dividerIndex
+           lastHeight:(CGFloat * _Nonnull)lastHeight
+    animationDuration:(NSTimeInterval)duration
+      collapsesUpward:(BOOL)collapsesUpwards
+     heightConstraint:(NSLayoutConstraint * _Nonnull)heightConstraint
+    completionHandler:(nullable void (^)(BOOL isOpen))completionHandler;
 
 
 @end

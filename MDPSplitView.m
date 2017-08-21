@@ -57,10 +57,10 @@ static NSInteger MDPKeyToIndex(NSString *key)
 
 static MDPSplitView *CommonInit(MDPSplitView *self)
 {
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-		MDPSplitViewRunning10_10OrLater = [NSProcessInfo instancesRespondToSelector:@selector(operatingSystemVersion)];
-	});
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        MDPSplitViewRunning10_10OrLater = [NSProcessInfo instancesRespondToSelector:@selector(operatingSystemVersion)];
+    });
     self.mdp_animationCounts = [NSCountedSet new];
     return self;
 }
@@ -85,35 +85,35 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
 {
     if ([key hasPrefix:MDPKeyPrefix])
     {
-		BOOL (^viewIsClosed)(NSView *) = ^ BOOL (NSView *view) {
-			return (self.isVertical ? NSWidth(view.frame) : NSHeight(view.frame)) == 0;
-		};
-		
+        BOOL (^viewIsClosed)(NSView *) = ^ BOOL (NSView *view) {
+            return (self.isVertical ? NSWidth(view.frame) : NSHeight(view.frame)) == 0;
+        };
+        
         NSInteger index = MDPKeyToIndex(key);
         CGFloat newPosition = [(NSNumber *)value floatValue];
         
         NSView *view1 = self.subviews[index];
         NSView *view2 = self.subviews[index + 1];
-		
-		BOOL view1WasClosed = viewIsClosed(view1);
-		BOOL view2WasClosed = viewIsClosed(view2);
-		
+        
+        BOOL view1WasClosed = viewIsClosed(view1);
+        BOOL view2WasClosed = viewIsClosed(view2);
+        
         [self setPosition:newPosition ofDividerAtIndex:index];
-		
-		BOOL view1IsClosed = viewIsClosed(view1);
-		BOOL view2IsClosed = viewIsClosed(view2);
-		
-		// Why doesn't NSSplitView do this itself? I dunno. But it's buggy on
-		// 10.9 at least. But it doesn't work to set them all the time. You have
-		// to set the property only when the state should change.
-		if (view1WasClosed != view1IsClosed)
-		{
-			view1.hidden = view1IsClosed;
-		}
-		if (view2WasClosed != view2IsClosed)
-		{
-			view2.hidden = view2IsClosed;
-		}
+        
+        BOOL view1IsClosed = viewIsClosed(view1);
+        BOOL view2IsClosed = viewIsClosed(view2);
+        
+        // Why doesn't NSSplitView do this itself? I dunno. But it's buggy on
+        // 10.9 at least. But it doesn't work to set them all the time. You have
+        // to set the property only when the state should change.
+        if (view1WasClosed != view1IsClosed)
+        {
+            view1.hidden = view1IsClosed;
+        }
+        if (view2WasClosed != view2IsClosed)
+        {
+            view2.hidden = view2IsClosed;
+        }
     }
     else
         [super setValue:value forKey:key];
@@ -166,13 +166,13 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
         }
         
         [NSAnimationContext
-            runAnimationGroup:^(NSAnimationContext *context) {
-                [self.mdp_animationCounts addObject:@(dividerIndex)];
-                [self.animator setValue:@(position) forKey:MDPKeyFromIndex(dividerIndex)];
-            }
-            completionHandler:^{
-                [self.mdp_animationCounts removeObject:@(dividerIndex)];
-            }];
+         runAnimationGroup:^(NSAnimationContext *context) {
+             [self.mdp_animationCounts addObject:@(dividerIndex)];
+             [self.animator setValue:@(position) forKey:MDPKeyFromIndex(dividerIndex)];
+         }
+         completionHandler:^{
+             [self.mdp_animationCounts removeObject:@(dividerIndex)];
+         }];
     }
     else
     {
@@ -189,37 +189,37 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
 // The following two methods don’t do anything but wrap and rename
 // the core method so that method calls are more readable.
 - (void)toggleSubview:(NSView * _Nonnull)subview
-		 dividerIndex:(NSUInteger)dividerIndex
-			lastWidth:(CGFloat * _Nonnull)lastWidth
-	animationDuration:(NSTimeInterval)duration
+         dividerIndex:(NSUInteger)dividerIndex
+            lastWidth:(CGFloat * _Nonnull)lastWidth
+    animationDuration:(NSTimeInterval)duration
    collapsesRightward:(BOOL)collapsesRightward
-	  widthConstraint:(NSLayoutConstraint * _Nonnull)widthConstraint
-	completionHandler:(nullable void (^)(BOOL isOpen))completionHandler;
+      widthConstraint:(NSLayoutConstraint * _Nonnull)widthConstraint
+    completionHandler:(nullable void (^)(BOOL isOpen))completionHandler;
 {
-	[self      toggleSubview:subview
-				dividerIndex:dividerIndex
-				  lastExtent:lastWidth
-		   animationDuration:duration
+    [self      toggleSubview:subview
+                dividerIndex:dividerIndex
+                  lastExtent:lastWidth
+           animationDuration:duration
 collapsesInPositiveDirection:collapsesRightward
-			extentConstraint:widthConstraint
-		   completionHandler:completionHandler];
+            extentConstraint:widthConstraint
+           completionHandler:completionHandler];
 }
 
 - (void)toggleSubview:(NSView * _Nonnull)subview
-		 dividerIndex:(NSUInteger)dividerIndex
-		   lastHeight:(CGFloat * _Nonnull)lastHeight
-	animationDuration:(NSTimeInterval)duration
-	  collapsesUpward:(BOOL)collapsesUpwards
-	 heightConstraint:(NSLayoutConstraint * _Nonnull)heightConstraint
-	completionHandler:(nullable void (^)(BOOL isOpen))completionHandler;
+         dividerIndex:(NSUInteger)dividerIndex
+           lastHeight:(CGFloat * _Nonnull)lastHeight
+    animationDuration:(NSTimeInterval)duration
+      collapsesUpward:(BOOL)collapsesUpwards
+     heightConstraint:(NSLayoutConstraint * _Nonnull)heightConstraint
+    completionHandler:(nullable void (^)(BOOL isOpen))completionHandler;
 {
-	[self      toggleSubview:subview
-				dividerIndex:dividerIndex
-				  lastExtent:lastHeight
-		   animationDuration:duration
+    [self      toggleSubview:subview
+                dividerIndex:dividerIndex
+                  lastExtent:lastHeight
+           animationDuration:duration
 collapsesInPositiveDirection:collapsesUpwards // Positive values extend upwards in Cocoa.
-			extentConstraint:heightConstraint
-		   completionHandler:completionHandler];
+            extentConstraint:heightConstraint
+           completionHandler:completionHandler];
 }
 
 // The core method.
