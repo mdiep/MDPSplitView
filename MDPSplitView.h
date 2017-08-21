@@ -3,7 +3,10 @@
 //
 //  Created by Matt Diephouse on 12/2/14.
 //  Copyright (c) 2014 Matt Diephouse.
+//  Copyright (c) 2017 Jan Weiß.
 //
+//  Some rights reserved: https://opensource.org/licenses/MIT
+
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
 //  in the Software without restriction, including without limitation the rights
@@ -58,7 +61,22 @@ FOUNDATION_EXPORT const unsigned char MDPSplitViewVersionString[];
 - (BOOL)isAnimatingDividerAtIndex:(NSInteger)dividerIndex;
 
 
-@end
+- (void)toggleSubview:(NSView * _Nonnull)subview
+		 dividerIndex:(NSUInteger)dividerIndex
+			lastWidth:(CGFloat * _Nonnull)lastWidth
+	animationDuration:(NSTimeInterval)duration
+   collapsesRightward:(BOOL)collapsesRightward
+	  widthConstraint:(NSLayoutConstraint * _Nonnull)widthConstraint
+	completionHandler:(nullable void (^)(BOOL isOpen))completionHandler;
 
-#import "MDPSplitView+SubviewToggleHelper.h"
+- (void)toggleSubview:(NSView * _Nonnull)subview
+		 dividerIndex:(NSUInteger)dividerIndex
+		   lastHeight:(CGFloat * _Nonnull)lastHeight
+	animationDuration:(NSTimeInterval)duration
+	  collapsesUpward:(BOOL)collapsesUpwards
+	 heightConstraint:(NSLayoutConstraint * _Nonnull)heightConstraint
+	completionHandler:(nullable void (^)(BOOL isOpen))completionHandler;
+
+
+@end
 
