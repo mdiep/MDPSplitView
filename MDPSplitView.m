@@ -192,8 +192,9 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
 }
 
 
-// The following two methods don’t do anything but wrap and rename
-// the core method so that method calls are more readable.
+// The following two methods don’t do anything,
+// apart from wrapping and renaming the core method
+// so that method calls are more readable.
 - (void)toggleSubview:(NSView * _Nonnull)subview
          dividerIndex:(NSUInteger)dividerIndex
             lastWidth:(CGFloat * _Nonnull)lastWidth
