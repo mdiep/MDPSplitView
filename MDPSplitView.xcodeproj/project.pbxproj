@@ -36,6 +36,7 @@
 				BEF8D8651A6821B9005B8FAA /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		BEF8D8651A6821B9005B8FAA /* Products */ = {
 			isa = PBXGroup;
