@@ -78,7 +78,9 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
         return @(self.isVertical ? NSMaxX(leftView.frame) : NSMaxY(leftView.frame));
     }
     else
+    {
         return [super valueForKey:key];
+    }
 }
 
 - (void)setValue:(id)value forKey:(NSString *)key
@@ -116,7 +118,9 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
         }
     }
     else
+    {
         [super setValue:value forKey:key];
+    }
 }
 
 
@@ -139,7 +143,9 @@ static MDPSplitView *CommonInit(MDPSplitView *self)
         return [CABasicAnimation new];
     }
     else
+    {
         return [super defaultAnimationForKey:key];
+    }
 }
 
 
