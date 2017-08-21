@@ -232,7 +232,8 @@ collapsesInPositiveDirection:(BOOL)collapsesInPositiveDirection
            completionHandler:(nullable void (^)(BOOL isOpen))completionHandler
 {
     
-    if ([self isAnimatingDividerAtIndex:dividerIndex]) {
+    if ([self isAnimatingDividerAtIndex:dividerIndex])
+    {
         return;
     }
     
@@ -241,32 +242,41 @@ collapsesInPositiveDirection:(BOOL)collapsesInPositiveDirection
     BOOL initiallyOpen = ![self isSubviewCollapsed:subview];
     
     CGFloat position = (initiallyOpen ? 0.0 : *lastExtent);
-    if (collapsesInPositiveDirection) {
-        if (dividedLeftToRight) {
+    if (collapsesInPositiveDirection)
+    {
+        if (dividedLeftToRight)
+        {
             position = self.frame.size.width - position;
         }
-        else {
+        else
+        {
             position = self.frame.size.height - position;
         }
     }
     
     [subview removeConstraint:extentConstraint];
     
-    if (initiallyOpen) {
-        if (dividedLeftToRight) {
+    if (initiallyOpen)
+    {
+        if (dividedLeftToRight)
+        {
             *lastExtent = subview.frame.size.width;
         }
-        else {
+        else
+        {
             *lastExtent = subview.frame.size.height;
         }
     }
-    else {
+    else
+    {
         NSRect frame = subview.frame;
         
-        if (dividedLeftToRight) {
+        if (dividedLeftToRight)
+        {
             frame.size.width = 0.0;
         }
-        else {
+        else
+        {
             frame.size.height = 0.0;
         }
         
@@ -284,10 +294,12 @@ collapsesInPositiveDirection:(BOOL)collapsesInPositiveDirection
                   animated:YES];
      } completionHandler:
      ^{
-         if (initiallyOpen == NO) {
+         if (initiallyOpen == NO)
+         {
              [subview addConstraint:extentConstraint];
          }
-         if (completionHandler != NULL) {
+         if (completionHandler != NULL)
+         {
              completionHandler(!initiallyOpen);
          }
      }];
