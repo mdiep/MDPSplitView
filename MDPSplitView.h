@@ -47,7 +47,7 @@ FOUNDATION_EXPORT const unsigned char MDPSplitViewVersionString[];
     The new position of the divider.
  @param dividerIndex
     The index of the divider to position.
- @param    animated
+ @param animated
     Whether the positioning should be animated.
  */
 - (void)setPosition:(CGFloat)position ofDividerAtIndex:(NSInteger)dividerIndex animated:(BOOL)animated;
